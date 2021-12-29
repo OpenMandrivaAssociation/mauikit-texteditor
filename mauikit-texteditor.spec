@@ -6,7 +6,7 @@
 Name:		mauikit-texteditor
 Version:	2.1.0
 Release:	1
-Summary:	MauiKit File Browsing utilities and controls
+Summary:	MauiKit TextEditor utilities and controls
 Url:		http://mauikit.org/
 Source0:	https://invent.kde.org/maui/mauikit-texteditor/-/archive/v%{version}/mauikit-texteditor-v%{version}.tar.bz2
 
