@@ -52,7 +52,6 @@ BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	qt5-qtgraphicaleffects
 BuildRequires:	qt5-qtdeclarative
 BuildRequires:	qt5-qtquickcontrols2
-Requires:	%{libname} = %{EVRD}
 
 %description
 Library for developing MAUI applications
@@ -66,7 +65,6 @@ widgets shared amoing the other Maui apps.
 %package -n %{libname}
 Summary:	Library files for mauikit-texteditor
 Group:		System/Libraries
-Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 Library files for mauikit-texteditor
@@ -80,7 +78,7 @@ widgets shared amoing the other Maui apps.
 %package -n %{devname}
 Summary:	Development files for mauikit-texteditor
 Group:		Development/KDE and Qt
-Requires:	%{name} = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 Development files for mauikit-texteditor
@@ -102,14 +100,9 @@ widgets shared amoing the other Maui apps.
 %install
 %ninja_install -C build
 
-%files
-#{_libdir}/qt5/qml/org/mauikit/filebrowsing
-
 %files -n %{libname}
-#{_libdir}/libMauiKitFileBrowsing.so.1*
-#{_libdir}/libMauiKitFileBrowsing.so.%{major}*
+%{_libdir}/qt5/qml/org/mauikit/texteditor/libMauiKitTextEditor.so
+%{_libdir}/qt5/qml/org/mauikit/texteditor/qmldir
 
 %files -n %{devname}
-#{_includedir}/MauiKit/FileBrowsing
-#{_libdir}/cmake/MauiKitFileBrowsing
-#{_libdir}/libMauiKitFileBrowsing.so
+%{_libdir}/cmake/MauiKitTextEditor/MauiKitTextEditorConfig*
