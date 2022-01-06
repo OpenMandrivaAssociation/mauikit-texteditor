@@ -1,14 +1,15 @@
 %define major 2
 
+%define snapshot 20220106
 %define libname %mklibname MauiKit-texteditor %{major}
 %define devname %mklibname -d MauiKit-texteditor
 
 Name:		mauikit-texteditor
-Version:	2.1.0
-Release:	1
+Version:	2.1.1
+Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	MauiKit TextEditor utilities and controls
 Url:		http://mauikit.org/
-Source0:	https://invent.kde.org/maui/mauikit-texteditor/-/archive/v%{version}/mauikit-texteditor-v%{version}.tar.bz2
+Source0:	https://invent.kde.org/maui/mauikit-texteditor/-/archive/%{?snapshot:master/mauikit-texteditor-master.tar.bz2#/mauikit-texteditor-%{snapshot}.tar.bz2}%{!?snapshot:v%{version}/mauikit-texteditor-v%{version}.tar.bz2}
 
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
@@ -91,7 +92,7 @@ widgets shared amoing the other Maui apps.
 
 
 %prep
-%autosetup -p1 -n %{name}-v%{version}
+%autosetup -p1 -n %{name}-%{?snapshot:master}%{!?snapshot:v%{version}}
 %cmake_kde5 -G Ninja
 
 %build
