@@ -1,11 +1,11 @@
 %define major 2
 
-%define snapshot 20220106
+#define snapshot 20220106
 %define libname %mklibname MauiKit-texteditor %{major}
 %define devname %mklibname -d MauiKit-texteditor
 
 Name:		mauikit-texteditor
-Version:	2.1.1
+Version:	2.2.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	MauiKit TextEditor utilities and controls
 Url:		http://mauikit.org/
