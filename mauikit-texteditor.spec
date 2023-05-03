@@ -101,9 +101,14 @@ widgets shared amoing the other Maui apps.
 %install
 %ninja_install -C build
 
-%files -n %{libname}
-%{_libdir}/qt5/qml/org/mauikit/texteditor/libMauiKitTextEditor.so
-%{_libdir}/qt5/qml/org/mauikit/texteditor/qmldir
+%find_lang mauikittexteditor
+
+%files -n %{libname} -f mauikittexteditor.lang
+%{_libdir}/libMauiKitTextEditor.so.%{major}*
+%{_libdir}/qt5/qml/org/mauikit/texteditor/
 
 %files -n %{devname}
-%{_libdir}/cmake/MauiKitTextEditor/MauiKitTextEditorConfig*
+%{_libdir}/cmake/MauiKitTextEditor/
+%{_libdir}/libMauiKitTextEditor.so
+%{_includedir}/MauiKit/TextEditor/texteditor_export.h
+%{_includedir}/MauiKit/TextEditor/texteditor_version.h
