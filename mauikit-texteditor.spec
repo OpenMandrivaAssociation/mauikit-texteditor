@@ -1,14 +1,15 @@
 %define major 3
 
 #define snapshot 20220106
-%define libname %mklibname MauiKit-texteditor %{major}
+%define libname %mklibname MauiKit-texteditor
+%define oldlibname %mklibname MauiKit-texteditor 3
 %define devname %mklibname -d MauiKit-texteditor
 
 Name:		mauikit-texteditor
-Version:	3.0.0
+Version:	3.0.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	MauiKit TextEditor utilities and controls
-Url:		http://mauikit.org/
+Url:		https://mauikit.org/
 Source0:	https://invent.kde.org/maui/mauikit-texteditor/-/archive/%{?snapshot:master/mauikit-texteditor-master.tar.bz2#/mauikit-texteditor-%{snapshot}.tar.bz2}%{!?snapshot:v%{version}/mauikit-texteditor-v%{version}.tar.bz2}
 
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
@@ -16,7 +17,7 @@ Group:		Applications/Productivity
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
-BuildRequires:  cmake(MauiKit)
+BuildRequires:  cmake(MauiKit3)
 BuildRequires:	cmake(Qt5Qml)
 BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	cmake(Qt5Core)
@@ -66,6 +67,7 @@ widgets shared amoing the other Maui apps.
 %package -n %{libname}
 Summary:	Library files for mauikit-texteditor
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 Library files for mauikit-texteditor
@@ -104,11 +106,11 @@ widgets shared amoing the other Maui apps.
 %find_lang mauikittexteditor
 
 %files -n %{libname} -f mauikittexteditor.lang
-%{_libdir}/libMauiKitTextEditor.so.%{major}*
+%{_libdir}/libMauiKitTextEditor3.so.%{major}*
 %{_libdir}/qt5/qml/org/mauikit/texteditor/
 
 %files -n %{devname}
-%{_libdir}/cmake/MauiKitTextEditor/
-%{_libdir}/libMauiKitTextEditor.so
-%{_includedir}/MauiKit/TextEditor/texteditor_export.h
-%{_includedir}/MauiKit/TextEditor/texteditor_version.h
+%{_libdir}/cmake/MauiKitTextEditor3/
+%{_libdir}/libMauiKitTextEditor3.so
+%{_includedir}/MauiKit3/TextEditor/texteditor_export.h
+%{_includedir}/MauiKit3/TextEditor/texteditor_version.h
