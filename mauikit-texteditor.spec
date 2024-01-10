@@ -114,3 +114,4 @@ widgets shared amoing the other Maui apps.
 %{_libdir}/libMauiKitTextEditor3.so
 %{_includedir}/MauiKit3/TextEditor/texteditor_export.h
 %{_includedir}/MauiKit3/TextEditor/texteditor_version.h
+%{_includedir}/MauiKit3/TextEditor/moduleinfo.h
