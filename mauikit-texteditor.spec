@@ -6,7 +6,7 @@
 %define devname %mklibname -d MauiKit-texteditor
 
 Name:		mauikit-texteditor
-Version:	3.0.2
+Version:	3.1.0
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	MauiKit TextEditor utilities and controls
 Url:		https://mauikit.org/
