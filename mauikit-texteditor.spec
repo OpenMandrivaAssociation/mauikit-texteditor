@@ -6,7 +6,7 @@
 %define devname %mklibname -d MauiKit-texteditor
 
 Name:		mauikit-texteditor
-Version:	4.0.1
+Version:	4.0.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	MauiKit TextEditor utilities and controls
 Url:		https://mauikit.org/
@@ -35,7 +35,7 @@ BuildRequires:	cmake(KF6Service)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6Kirigami2)
 BuildRequires:	cmake(KF6ConfigWidgets)
-BuildRequires:	cmake(KDecoration2)
+#BuildRequires:	cmake(KDecoration2)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Declarative)
 BuildRequires:	cmake(Qt6Widgets)
